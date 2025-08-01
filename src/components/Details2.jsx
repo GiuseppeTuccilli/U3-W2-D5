@@ -3,7 +3,7 @@ import Alert from "react-bootstrap/Alert";
 import { useState, useEffect } from "react";
 import { useLocation, useParams } from "react-router-dom";
 
-const Details2 = () => {
+const Details = () => {
   const params = useParams();
   const [wheaterOggi, setWheaterOggi] = useState([]);
   const [wheaterAltri, setWheaterAltri] = useState([]);
@@ -24,12 +24,10 @@ const Details2 = () => {
 
   console.log(domani2.toISOString().slice(0, 10)); // oggetto Date per domani
 
-  const getData = (city, country) => {
+  const getData = (city) => {
     fetch(
       "https://api.openweathermap.org/data/2.5/forecast?q=" +
         city +
-        "," +
-        country +
         "&appid=907082adf259a39f128ff2e434487c57&units=metric"
     )
       .then((res) => {
@@ -56,7 +54,7 @@ const Details2 = () => {
   console.log(params);
 
   useEffect(() => {
-    getData(params.city, params.country);
+    getData(params.city);
   }, []);
 
   return (
@@ -266,4 +264,4 @@ const Details2 = () => {
   );
 };
 
-export default Details2;
+export default Details;

@@ -6,10 +6,13 @@ import { Form } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 const MyNavbar = () => {
   const location = useLocation();
-
+  const navigate = useNavigate();
+  const [input, setInput] = useState("");
   return (
     <Navbar
       expand="lg"
@@ -18,7 +21,13 @@ const MyNavbar = () => {
       data-bs-theme="dark"
     >
       <Container fluid>
-        <Navbar.Brand href="#">Navbar scroll</Navbar.Brand>
+        <Navbar.Brand href="#">
+          METEO
+          <img
+            style={{ height: "2em", marginLeft: "1em" }}
+            src="https://media.istockphoto.com/id/1219159429/it/vettoriale/icona-meteo-isolata-su-sfondo-bianco-vettore-simbolo-meteorologico-icona-meteo-logo-meteo.jpg?s=612x612&w=0&k=20&c=zaq0zbd8pvn1tZYUjEsSX8htsru7NY01J2Y7626gszI="
+          />
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <ul className="navbar-nav flex-grow-1">
@@ -32,7 +41,7 @@ const MyNavbar = () => {
                 Home
               </Link>
             </li>
-            <li className="nav-item">
+            {/*<li className="nav-item">
               <Link
                 className={
                   "nav-link " +
@@ -53,17 +62,28 @@ const MyNavbar = () => {
               >
                 Situazione
               </Link>
-            </li>
+            </li>*/}
           </ul>
-          <form className="d-flex" role="search">
+          <form
+            className="d-flex"
+            role="search"
+            onSubmit={(e) => {
+              e.preventDefault();
+              navigate("/" + input);
+            }}
+          >
             <input
               className="form-control me-2"
               type="search"
               placeholder="Cerca città..."
               aria-label="Search"
+              value={input}
+              onChange={(e) => {
+                setInput(e.target.value);
+              }}
             />
-            <button className="btn btn-outline-success" type="submit">
-              Cerca
+            <button className="btn btn-outline-info" type="submit">
+              <i className="bi bi-search fw-bold"></i>
             </button>
           </form>
         </Navbar.Collapse>

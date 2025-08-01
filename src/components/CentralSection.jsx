@@ -53,7 +53,7 @@ const CentralSection = () => {
 
   const getNewYork = () => {
     fetch(
-      "https://api.openweathermap.org/data/2.5/weather?q=New%20York&appid=907082adf259a39f128ff2e434487c57"
+      "https://api.openweathermap.org/data/2.5/weather?q=New%20York&appid=907082adf259a39f128ff2e434487c57&units=metric"
     )
       .then((res) => {
         if (res.ok) {
@@ -72,7 +72,7 @@ const CentralSection = () => {
   };
   const getTokyo = () => {
     fetch(
-      "https://api.openweathermap.org/data/2.5/weather?q=Tokyo&appid=907082adf259a39f128ff2e434487c57"
+      "https://api.openweathermap.org/data/2.5/weather?q=Tokyo&appid=907082adf259a39f128ff2e434487c57&units=metric"
     )
       .then((res) => {
         if (res.ok) {
@@ -91,7 +91,7 @@ const CentralSection = () => {
   };
   const getParis = () => {
     fetch(
-      "https://api.openweathermap.org/data/2.5/weather?q=Paris&appid=907082adf259a39f128ff2e434487c57"
+      "https://api.openweathermap.org/data/2.5/weather?q=Paris&appid=907082adf259a39f128ff2e434487c57&units=metric"
     )
       .then((res) => {
         if (res.ok) {
