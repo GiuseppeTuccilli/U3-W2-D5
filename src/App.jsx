@@ -9,6 +9,7 @@ import Welcome from "./components/Welcome.jsx";
 import Details from "./components/Details.jsx";
 import Details2 from "./components/Details.jsx";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import { useParams } from "react-router-dom";
 
 function App() {
   return (

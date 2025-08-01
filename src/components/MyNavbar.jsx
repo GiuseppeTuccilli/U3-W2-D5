@@ -67,8 +67,7 @@ const MyNavbar = () => {
           <form
             className="d-flex"
             role="search"
-            onSubmit={(e) => {
-              e.preventDefault();
+            onSubmit={() => {
               navigate("/" + input);
             }}
           >

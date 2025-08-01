@@ -69,7 +69,7 @@ const Details = () => {
         </Alert.Heading>
         <p className="text-center"></p>
       </Alert>
-      <Table striped>
+      <Table striped variant="dark">
         <thead>
           <tr>
             <th>Ora</th>
