@@ -2,12 +2,13 @@ import Table from "react-bootstrap/Table";
 import Alert from "react-bootstrap/Alert";
 import { useState, useEffect } from "react";
 import { useLocation, useParams } from "react-router-dom";
+import { Spinner } from "react-bootstrap";
 
 const Details = () => {
   const params = useParams();
   const [wheaterOggi, setWheaterOggi] = useState([]);
   const [wheaterAltri, setWheaterAltri] = useState([]);
-
+  const [loading, setLoading] = useState(true);
   const today = new Date().toISOString().split("T")[0];
   const oggi = new Date();
   const domani = new Date(); // crea una copia
@@ -39,6 +40,7 @@ const Details = () => {
       })
       .then((data) => {
         console.log(data);
+        setLoading(false);
         setWheaterOggi(
           data.list.filter((dati) => dati.dt_txt.startsWith(today))
         );
@@ -47,6 +49,7 @@ const Details = () => {
         );
       })
       .catch((er) => {
+        setLoading(false);
         alert("errore nel recupero dati", er);
       });
   };
@@ -69,6 +72,11 @@ const Details = () => {
         </Alert.Heading>
         <p className="text-center"></p>
       </Alert>
+      {loading && (
+        <div className="text-center">
+          <Spinner variant="danger" />
+        </div>
+      )}
       <Table striped variant="dark">
         <thead>
           <tr>
