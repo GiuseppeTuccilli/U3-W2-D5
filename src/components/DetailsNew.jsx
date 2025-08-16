@@ -99,7 +99,10 @@ const DetailsNew = () => {
         style={{ height: "10em" }}
       >
         <Alert.Heading className="text-center">
-          Previsioni per {params.city.toUpperCase()}{" "}
+          Previsioni per{" "}
+          <span className="text-dark fw-bold">
+            {params.city.toUpperCase()}{" "}
+          </span>
         </Alert.Heading>
         <p className="text-center"></p>
       </Alert>
@@ -172,9 +175,9 @@ const DetailsNew = () => {
               <thead>
                 <tr>
                   <th className="text-center">Ora</th>
-                  <th className="text-center">Tempo</th>
-                  <th className="text-center">Temperatura</th>
-                  <th className="text-center">Precipitazioni</th>
+                  <th className="text-center">Clima</th>
+                  <th className="text-center">Temp</th>
+                  <th className="text-center">Pioggia</th>
                 </tr>
               </thead>
               <tbody>

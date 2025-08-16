@@ -120,7 +120,7 @@ const CentralSection = () => {
   return (
     <Row className="justify-content-center my-3 g-2">
       <Col xs={6} md={4}>
-        <Card>
+        <Card className="bg-secondary text-white ">
           <Card.Img
             style={{ height: "10em", objectFit: "cover" }}
             variant="top"
@@ -157,7 +157,7 @@ const CentralSection = () => {
         </Card>
       </Col>
       <Col xs={6} md={4}>
-        <Card>
+        <Card className="bg-secondary text-white ">
           <Card.Img
             style={{ height: "10em", objectFit: "cover" }}
             variant="top"
@@ -194,7 +194,7 @@ const CentralSection = () => {
         </Card>
       </Col>
       <Col xs={6} md={4}>
-        <Card>
+        <Card className="bg-secondary text-white ">
           <Card.Img
             style={{ height: "10em", objectFit: "cover" }}
             variant="top"
@@ -231,7 +231,7 @@ const CentralSection = () => {
         </Card>
       </Col>
       <Col xs={6} md={4}>
-        <Card>
+        <Card className="bg-secondary text-white ">
           <Card.Img
             style={{ height: "10em", objectFit: "cover" }}
             variant="top"
@@ -268,7 +268,7 @@ const CentralSection = () => {
         </Card>
       </Col>
       <Col xs={6} md={4}>
-        <Card>
+        <Card className="bg-secondary text-white ">
           <Card.Img
             style={{ height: "10em", objectFit: "cover" }}
             variant="top"
